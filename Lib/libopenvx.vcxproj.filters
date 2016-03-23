@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Common">
+      <UniqueIdentifier>{bae2c5f6-18f1-4579-a33f-35fb04b2423e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Kernels">
+      <UniqueIdentifier>{010444cc-39ff-4ae4-8232-2039d523f8c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Common">
+      <UniqueIdentifier>{95bfae5d-4a7b-4fbf-8c43-c5f6c94dc10c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Kernels">
+      <UniqueIdentifier>{3867f859-954b-491d-a03b-5eb3a1cdb3b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Common\openvx">
+      <UniqueIdentifier>{2f06b459-e1aa-47ba-a56d-96b2caa5ac1d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Kernels\ref.h">
+      <Filter>Header Files\Kernels</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\types.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\openvx\vx.h">
+      <Filter>Header Files\Common\openvx</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\openvx\vx_api.h">
+      <Filter>Header Files\Common\openvx</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\openvx\vx_kernels.h">
+      <Filter>Header Files\Common\openvx</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\openvx\vx_nodes.h">
+      <Filter>Header Files\Common\openvx</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\openvx\vx_types.h">
+      <Filter>Header Files\Common\openvx</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\openvx\vx_vendors.h">
+      <Filter>Header Files\Common\openvx</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\openvx\vxu.h">
+      <Filter>Header Files\Common\openvx</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Kernels\ref\ref_Threshold.c">
+      <Filter>Source Files\Kernels</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
