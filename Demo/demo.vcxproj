@@ -52,6 +52,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(OPENCV_DIR)include;..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -59,6 +60,7 @@
       <AdditionalLibraryDirectories>$(OPENCV_DIR)$(PROCESSOR_ARCHITECTURE)\vc12\lib\</AdditionalLibraryDirectories>
       <AdditionalDependencies>opencv_world300d.lib</AdditionalDependencies>
       <LinkStatus>false</LinkStatus>
+      <TreatLinkerWarningAsErrors>true</TreatLinkerWarningAsErrors>
     </Link>
     <PostBuildEvent>
       <Command>copy %OPENCV_DIR%$(PROCESSOR_ARCHITECTURE)\vc12\bin\opencv_world300d.dll $(SolutionDir)$(Configuration)\opencv_world300d.dll</Command>
@@ -81,6 +83,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(OPENCV_DIR)include;..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -90,6 +93,7 @@
       <AdditionalLibraryDirectories>$(OPENCV_DIR)$(PROCESSOR_ARCHITECTURE)\vc12\lib\</AdditionalLibraryDirectories>
       <AdditionalDependencies>opencv_world300.lib</AdditionalDependencies>
       <LinkStatus>false</LinkStatus>
+      <TreatLinkerWarningAsErrors>true</TreatLinkerWarningAsErrors>
     </Link>
     <PostBuildEvent>
       <Command>copy %OPENCV_DIR%$(PROCESSOR_ARCHITECTURE)\vc12\bin\opencv_world300.dll $(SolutionDir)$(Configuration)\opencv_world300.dll</Command>

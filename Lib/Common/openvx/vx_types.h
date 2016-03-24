@@ -24,6 +24,8 @@
 #ifndef _OPENVX_TYPES_H_
 #define _OPENVX_TYPES_H_
 
+#pragma warning(push, 4)
+
 /*!
  * \file vx_types.h
  * \brief The type definitions required by OpenVX Library.
@@ -474,7 +476,7 @@ typedef vx_action (VX_CALLBACK *vx_nodecomplete_f)(vx_node node);
  */
 #define VX_LIBRARY(e)                       (((vx_uint32)e & VX_LIBRARY_MASK) >> 12)
 
-#if defined(_LITTLE_ENDIAN_) || (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__) || defined(_WIN32)
+#if  defined(_WIN32) || defined(_LITTLE_ENDIAN_) || (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
 #define VX_DF_IMAGE(a,b,c,d)                  ((a) | (b << 8) | (c << 16) | (d << 24))
 #define VX_ATTRIBUTE_BASE(vendor, object)   (((vendor) << 20) | (object << 8))
 #define VX_KERNEL_BASE(vendor, lib)         (((vendor) << 20) | (lib << 12))
@@ -1445,5 +1447,8 @@ typedef void (VX_CALLBACK *vx_log_callback_f)(vx_context context,
                                   vx_reference ref,
                                   vx_status status,
                                   const vx_char string[]);
+
+
+#pragma warning(pop)
 
 #endif

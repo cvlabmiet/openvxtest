@@ -14,10 +14,13 @@
 
 #include "openvx/vx.h"
 
+#pragma warning(disable: 4820) // suppress 1 byte padding for vx_threshold
+
 /*
     Structure: _vx_threshold
     Cтруктура для хранения значения порога.
 */
+
 struct _vx_threshold
 {
     //Variable: threshold_type
@@ -33,6 +36,8 @@ struct _vx_threshold
     //значение нижнего порога.
     uint8_t lower_threshold;
 };
+
+#pragma warning(default: 4820)
 
 /*
     Structure: _vx_image
