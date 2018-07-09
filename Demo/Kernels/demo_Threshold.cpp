@@ -50,7 +50,7 @@ namespace
 {
    const std::string m_openVXWindow    = "openVX";
    const std::string m_openCVWindow    = "openCV";
-   const std::string m_originalWindow  = "original";
+   const std::string m_originalWindow  = "original1";
    const std::string m_diffWindow      = m_openVXWindow + "-" + m_openCVWindow;
 }
 
@@ -62,10 +62,9 @@ void demo_Threshold::execute()
    cv::namedWindow(m_openCVWindow, CV_WINDOW_NORMAL);
    cv::namedWindow(m_diffWindow, CV_WINDOW_NORMAL);
 
-   const std::string imgPath = "..\\Image\\Solvay_conference_1927.png";
+   const std::string imgPath =  "Solvay_conference_1927.png";
    m_srcImage = cv::imread(imgPath, CV_LOAD_IMAGE_GRAYSCALE);
    cv::imshow(m_originalWindow, m_srcImage);
-
    cv::createTrackbar("Threshold:", m_originalWindow, &m_threshold, 255, applyParameters, static_cast<void*>(this));
    applyParameters(m_threshold, this);
 

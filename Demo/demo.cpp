@@ -16,6 +16,6 @@ int main(int argc, char* argv[])
    {
       engine.Run(DemoEngine::eAll);
    }
-
+   cv::destroyAllWindows();
    return 0;
 }

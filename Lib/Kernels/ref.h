@@ -198,6 +198,9 @@ vx_status ref_Threshold(const vx_image src_image, vx_image dst_image, const vx_t
         VX_ERROR_INVALID_PARAMETERS - в случае некорректных данных.       
 */
 // ref_FindContours
+vx_status ref_FindContours(const vx_image src_image, vx_image dst_image);
+ 
+vx_status ref_FindAllContours(const vx_image src_image, vx_image dst_image);
 
 /*
     Function: ref_HoughLines
@@ -212,6 +215,7 @@ vx_status ref_Threshold(const vx_image src_image, vx_image dst_image, const vx_t
         VX_SUCCESS          - в случае успешного завершения;
         VX_ERROR_INVALID_PARAMETERS - в случае некорректных данных.       
 */
+
 // ref_HoughLines
 
 /*

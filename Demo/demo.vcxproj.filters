@@ -24,6 +24,12 @@
     <ClCompile Include="Kernels\demo_Threshold.cpp">
       <Filter>Source Files\Kernels</Filter>
     </ClCompile>
+    <ClCompile Include="Kernels\demo_FindContours.cpp">
+      <Filter>Source Files\Kernels</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernels\demo_FindAllContours.cpp">
+      <Filter>Source Files\Kernels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DemoEngine.h">
