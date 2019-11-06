@@ -7,15 +7,15 @@
 
 int main(int argc, char* argv[])
 {
-   DemoEngine engine;
-   if (argc > 1)
-   {
-      engine.Run(_strcmpi(argv[1], "custom") == 0 ? DemoEngine::eAskUser : DemoEngine::eAll);
-   }
-   else
-   {
-      engine.Run(DemoEngine::eAll);
-   }
+    DemoEngine engine;
+    if (argc > 1)
+    {
+        engine.Run(argv[1] == std::string("custom") ? DemoEngine::eAskUser : DemoEngine::eAll);
+    }
+    else
+    {
+        engine.Run(DemoEngine::eAll);
+    }
 
-   return 0;
+    return 0;
 }
