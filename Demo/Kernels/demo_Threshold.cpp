@@ -9,8 +9,8 @@
 
 extern "C"
 {
-#include "Lib/Kernels/ref.h"
-#include "Lib/Common/types.h"
+#include <Kernels/ref.h>
+#include <types.h>
 }
 
 #include "../DemoEngine.h"
@@ -51,7 +51,7 @@ namespace
    const std::string m_openVXWindow    = "openVX";
    const std::string m_openCVWindow    = "openCV";
    const std::string m_originalWindow  = "original";
-   const std::string m_diffWindow      = m_openVXWindow + "-" + m_openCVWindow;
+   const std::string m_diffWindow      = "Diff of " + m_openVXWindow + " and " + m_openCVWindow;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -62,7 +62,7 @@ void demo_Threshold::execute()
    cv::namedWindow(m_openCVWindow, CV_WINDOW_NORMAL);
    cv::namedWindow(m_diffWindow, CV_WINDOW_NORMAL);
 
-   const std::string imgPath = "..\\Image\\Solvay_conference_1927.png";
+   const std::string imgPath = "../Image/Solvay_conference_1927.png";
    m_srcImage = cv::imread(imgPath, CV_LOAD_IMAGE_GRAYSCALE);
    cv::imshow(m_originalWindow, m_srcImage);
 
@@ -89,8 +89,8 @@ void demo_Threshold::applyParameters(int, void* data)
    _vx_threshold vxThresh = { VX_THRESHOLD_TYPE_BINARY, uint8_t(demo->m_threshold), 0/* dummy value */, 255 /* dummy value */};
    _vx_image srcVXImage = {
       demo->m_srcImage.data,
-      imgSize.width,
-      imgSize.height,
+      uint32_t(imgSize.width),
+      uint32_t(imgSize.height),
       VX_DF_IMAGE_U8,
       VX_COLOR_SPACE_DEFAULT
    };
@@ -98,8 +98,8 @@ void demo_Threshold::applyParameters(int, void* data)
    uint8_t* outVXImage = static_cast<uint8_t*>(calloc(imgSize.width* imgSize.height, sizeof(uint8_t)));
    _vx_image dstVXImage = {
       outVXImage,
-      imgSize.width,
-      imgSize.height,
+      uint32_t(imgSize.width),
+      uint32_t(imgSize.height),
       VX_DF_IMAGE_U8,
       VX_COLOR_SPACE_DEFAULT
    };

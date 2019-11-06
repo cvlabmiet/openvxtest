@@ -31,40 +31,38 @@ vx_status ref_Threshold(const vx_image src_image,
     const uint8_t* src_data = src_image->data;
     uint8_t* dst_data = dst_image->data;
 
-   for (uint32_t ind = 0; ind <= src_width * src_height; ++ind)
+    for (uint32_t ind = 0; ind < src_width * src_height; ++ind)
     {
-        if (ind < src_width * src_height)
+        if (thresh->threshold_type == VX_THRESHOLD_TYPE_BINARY)
         {
-            if (thresh->threshold_type == VX_THRESHOLD_TYPE_BINARY)
+            if (src_data[ind] > thresh->value)
             {
-                if (src_data[ind] > thresh->value)
-                {
-                    dst_data[ind] = 255;
-                }
-                else
-                {
-                    dst_data[ind] = 0;
-                }
+                dst_data[ind] = 255;
             }
             else
             {
-                if (src_data[ind] > thresh->upper_threshold)
+                dst_data[ind] = 0;
+            }
+        }
+        else
+        {
+            if (src_data[ind] > thresh->upper_threshold)
+            {
+                dst_data[ind] = 0;
+            }
+            else
+            {
+                if (src_data[ind] < thresh->lower_threshold)
                 {
                     dst_data[ind] = 0;
                 }
                 else
                 {
-                    if (src_data[ind] < thresh->lower_threshold)
-                    {
-                        dst_data[ind] = 0;
-                    }
-                    else
-                    {
-                        dst_data[ind] = 255;
-                    }
+                    dst_data[ind] = 255;
                 }
             }
         }
     }
+
     return VX_SUCCESS;
 }
