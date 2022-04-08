@@ -24,8 +24,6 @@
 #ifndef _OPENVX_TYPES_H_
 #define _OPENVX_TYPES_H_
 
-#pragma warning(push, 4)
-
 /*!
  * \file vx_types.h
  * \brief The type definitions required by OpenVX Library.
@@ -1448,7 +1446,5 @@ typedef void (VX_CALLBACK *vx_log_callback_f)(vx_context context,
                                   vx_status status,
                                   const vx_char string[]);
 
-
-#pragma warning(pop)
 
 #endif
