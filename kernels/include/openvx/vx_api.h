@@ -45,9 +45,7 @@ extern "C" {
  * \ingroup group_context
  * \post <tt>\ref vxReleaseContext</tt>
  */
-#pragma warning(disable: 4255)
 VX_API_ENTRY vx_context VX_API_CALL vxCreateContext();
-#pragma warning(default: 4255)
 
 /*! \brief Releases the OpenVX object context.
  * \details All reference counted objects are garbage-collected by the return of this call.
