@@ -35,4 +35,12 @@ vx_status ref_threshold(const vx_image src_image, vx_image dst_image, const vx_t
 }
 #endif
 
+/*! @brief Функция, реализующая поиск связных областей
+ *  @param[in] src_image входное изображение
+ *  @param[out] labels выходное изображение
+ *  @param[in] connectivity число, указывающее количество клеток, считающихся соседями
+ *  @retval количество компонент связности
+ */
+int32_t ref_cclabeling(const vx_image src_image, vx_image labels, const int connectivity);
+
 #endif // __KERNELS_H__
